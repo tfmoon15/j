@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>학습일지 열기</title>
+<style>body{font-family:-apple-system,"Malgun Gothic",sans-serif;padding:32px 20px;text-align:center;color:#333}a{color:#e5333a;font-weight:700}</style>
+</head>
+<body>
+<p id="m">학습일지를 여는 중이에요…</p>
+<script>
+(function () {
+  var BASE = 'https://script.google.com/macros/s/AKfycbwfnbz_9Exhub0mRMacUiD7i46qts8EEcTveg_N9JRFjkwGH4KIp8lVO2z-pvIt8rWQ/exec';
+  var m = /[?&]p=([A-Za-z0-9]{8,64})/.exec(location.search);
+  if (!m) {
+    document.getElementById('m').textContent = '링크가 올바르지 않아요. 학원에 문의해 주세요.';
+    return;
+  }
+  var url = BASE + '?p=' + m[1];
+  document.getElementById('m').innerHTML = '자동으로 열리지 않으면 <a href="' + url + '">여기를 눌러 주세요</a>.';
+  location.replace(url);
+})();
+</script>
+</body>
+</html>
